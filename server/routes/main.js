@@ -35,5 +35,17 @@ routes.get("/login",(req,res)=>{
     }
 })
 
+routes.get("/register",(req,res)=>{
+    try {
+        const locals = {
+            'title':'ParkFind SignUp',
+            "desc":""
+        }
+        res.render('register',{locals})
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 
 export default routes;
