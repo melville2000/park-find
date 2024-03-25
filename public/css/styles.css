@@ -155,13 +155,15 @@ h3 {
 
 .login_heading{
     text-decoration: none;
+    
 }
 
 .login_container{
-    background-image: url("../images/hallway-garage.jpg");
+    background-image: url("../images/hallway-garage-modified.jpg");
     background-size: cover;
     background-position: 10px;
-    /* height: 100vh; */
+    margin-left: 0%;
+    height: 100%;
 }
 
 .footer-container{
