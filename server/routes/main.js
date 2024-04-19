@@ -16,7 +16,6 @@ const authMiddleware = (req, res, next) => {
   const token = req.cookies.token;
 
   if (!token) {
-    
     // return res.status(401).json({ message: "Unauthorized" });
     res.redirect("login");
     // res.render("/");
@@ -133,12 +132,21 @@ routes.post("/login", async (req, res) => {
 
 /*  GET
     DASHBOARD */
-routes.get("/dashboard", authMiddleware, (req, res) => {
+routes.get("/dashboard", authMiddleware, async (req, res) => {
   try {
-    res.render("admin/dashboard", { layout: adminLayout });
-  } catch (errot) {
+    const curUser = await users.findById(req.userId);
+    res.render("admin/dashboard", { layout: adminLayout, curUser});
+  } catch (error) {
     console.log(error);
   }
 });
+
+//get
+//logout
+
+routes.get('/logout',(req,res)=>{
+  res.clearCookie("token")
+  res.redirect('/')
+})
 
 export default routes;
