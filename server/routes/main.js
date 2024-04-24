@@ -90,7 +90,7 @@ routes.post("/register", async (req, res) => {
       email,
       password: hashedPassword,
     });
-    res.render("login", { successMessage: " User created" });
+    res.render("login", { successMessage: " User created" , message: ""});
   } catch (error) {
     if (error.code) {
       res.render("register", { failureMessage: " User Exists" });
