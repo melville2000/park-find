@@ -60,7 +60,7 @@ routes.get("/login", (req, res) => {
       title: "ParkFind LogIn",
       desc: "",
     };
-    res.render("login", { successMessage: "", message: "" });
+    res.render("login", { locals, successMessage: "", message: "" });
   } catch (error) {
     console.log(error);
   }
@@ -84,11 +84,16 @@ routes.get("/register", (req, res) => {
 routes.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
+  const locals = {
+    title: "ParkFind LogIn",
+    desc: "",
+  };
   try {
     const user = await users.create({
       username,
       email,
       password: hashedPassword,
+      locals,
     });
     res.render("login", { successMessage: " User created" , message: ""});
   } catch (error) {
@@ -123,7 +128,7 @@ routes.post("/login", async (req, res) => {
     const token = jwt.sign({ userId: user._id }, jwtSecret);
     res.cookie("token", token, { httpOnly: true });
 
-    res.redirect("dashboard" /* ,{layout:adminLayout} */);
+    res.redirect("dashboard"/* ,{layout:adminLayout} */);
   } catch (error) {
     // res.render("login", { failureMessage: " Invalid credentials" });
     console.log(error);
@@ -135,7 +140,11 @@ routes.post("/login", async (req, res) => {
 routes.get("/dashboard", authMiddleware, async (req, res) => {
   try {
     const curUser = await users.findById(req.userId);
-    res.render("admin/dashboard", { layout: adminLayout, curUser});
+    const locals = {
+      title: "Admin Dashboard",
+      desc: "",
+    };
+    res.render("admin/dashboard", { layout: adminLayout, curUser, locals});
   } catch (error) {
     console.log(error);
   }
