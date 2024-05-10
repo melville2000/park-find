@@ -30,6 +30,7 @@ body {
   transition: ease-in-out 0.3s;
 }
 
+
 .menu {
   float: right;
   margin-right: 20px;
@@ -101,7 +102,7 @@ body {
   border-radius: 100px;
 }
 
-.profile p{
+.profile p {
   color: #6c7293;
   font-weight: 500;
   margin-left: 35px;
@@ -280,13 +281,14 @@ body {
 }
 
 .box {
-  width: 88%;
+  width: 91%;
   height: 130px;
   background-color: #ffffff;
-  margin-left: 10px;
+
   padding: 10px;
   box-shadow: 2px 5px 10px #ddd;
   position: relative;
+  border-radius: 10px;
 }
 
 .box p {
@@ -526,4 +528,29 @@ tr:nth-child(even) {
 .logOut_btn :hover {
   background-color: #5643ff;
   color: white;
+}
+
+/* Charts */
+.charts {
+  display: inline-flex;
+  width: 100%;
+}
+
+#homeOverview {
+  width: 65%;
+  height: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px #ddd;
+}
+
+#homePie {
+  margin-left: 20px;
+  width: auto;
+  height: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px #ddd;
 }
