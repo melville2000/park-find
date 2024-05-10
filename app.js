@@ -9,18 +9,18 @@ import "dotenv/config"
 
 const app = express();
 
-const PORT = 3000 || process.env.PORT
+const PORT = process.env.PORT
 
 connectDB()
 
 
-app.use(express.urlencoded({extended:true})); //bodyparser
+app.use(express.urlencoded({ extended: true })); //bodyparser
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(session({
-    secret : 'keyboard cat',
-    resave : false,
+    secret: 'keyboard cat',
+    resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
         mongoUrl: process.env.MONGO_URI
@@ -29,11 +29,11 @@ app.use(session({
 
 app.use(express.static("public"))
 app.use(expressEjsLayouts)
-app.set('layout','./layouts/main')
+app.set('layout', './layouts/main')
 app.set('view engine', "ejs")
 
-app.use('/',mainRoutes)
+app.use('/', mainRoutes)
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`)
 })

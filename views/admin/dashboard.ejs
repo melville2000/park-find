@@ -61,9 +61,9 @@
     <br />
 
     <div class="col-div-4-1">
-        <div class="box">
-            <p class="head-1">Sales</p>
-            <p class="number">67343</p>
+        <div class="box" id>
+            <p class="head-1">Available Slots</p>
+            <p class="number" id="totalAvail">-</p>
             <p class="percent"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> 5.674% <span>Since Last
                     Months</span></p>
             <i class="fa fa-line-chart box-icon"></i>
@@ -71,17 +71,18 @@
     </div>
     <div class="col-div-4-1">
         <div class="box">
-            <p class="head-1">purchases</p>
-            <p class="number">2343</p>
-            <p class="percent" style="color:red!important"><i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+            <p class="head-1">Used Slots</p>
+            <p class="number" id="totalUsed">-</p>
+            <p class="percent" style="color:red!important" id="UsedPercent"><i class="fa fa-long-arrow-down"
+                    aria-hidden="true"></i>
                 5.64% <span>Since Last Months</span></p>
             <i class="fa fa-circle-o-notch box-icon"></i>
         </div>
     </div>
     <div class="col-div-4-1">
         <div class="box">
-            <p class="head-1">orders</p>
-            <p class="number">35343</p>
+            <p class="head-1">Total Slots</p>
+            <p class="number" id="totalSlots">-</p>
             <p class="percent"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> 5.674% <span>Since Last
                     Months</span></p>
             <i class="fa fa-shopping-bag box-icon"></i>
@@ -206,7 +207,6 @@
 
     <div class="clearfix"></div>
 </div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>

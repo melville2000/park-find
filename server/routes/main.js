@@ -8,6 +8,8 @@ const routes = express.Router();
 const adminLayout = "../views/layouts/admin";
 const jwtSecret = process.env.JWT_TOKEN;
 
+
+
 /* GET / 
     check LOGIN
  */
@@ -95,7 +97,7 @@ routes.post("/register", async (req, res) => {
       password: hashedPassword,
       locals,
     });
-    res.render("login", { successMessage: " User created" , message: ""});
+    res.render("login", { successMessage: " User created", message: "" });
   } catch (error) {
     if (error.code) {
       res.render("register", { failureMessage: " User Exists" });
@@ -144,7 +146,7 @@ routes.get("/dashboard", authMiddleware, async (req, res) => {
       title: "Admin Dashboard",
       desc: "",
     };
-    res.render("admin/dashboard", { layout: adminLayout, curUser, locals});
+    res.render("admin/dashboard", { layout: adminLayout, curUser, locals });
   } catch (error) {
     console.log(error);
   }
@@ -153,9 +155,11 @@ routes.get("/dashboard", authMiddleware, async (req, res) => {
 //get
 //logout
 
-routes.get('/logout',(req,res)=>{
+routes.get('/logout', (req, res) => {
   res.clearCookie("token")
   res.redirect('/')
 })
 
 export default routes;
+export const channelId = process.env.CHANNEL_ID;
+export const apiKey = process.env.API_KEY;
