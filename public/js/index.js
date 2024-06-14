@@ -144,6 +144,7 @@ async function homeBarChart() {
     );
 }
 
+// *homePie chart
 async function homePie() {
     const returnedValue = await countZerosAndOnes()
 
@@ -189,14 +190,98 @@ async function homePie() {
     );
 
 }
+// *Floor1
+async function floor1() {
+    const data = {
+        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+        datasets: [{
+            label: 'Floor1',
+            backgroundColor: 'rgb(255, 221, 149,0.62)',
+            borderColor: 'rgb(255, 152, 67)',
+            fill: true,
+            data: [3, 2, 2, 3, 5, 2, 1, 1, 1, 1, 4, 3, 4, 4, 4, 4, 7, 7, 5, 6, 5, 4, 5, 3, 2, 4, 5, 5, 4, 4],
+            tension: 0.4,
+        }]
+    };
+
+    // Configuration for the chart
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            maintainAspectRatio: false, // Set this to false
+            responsive: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Level 1 Availibility'
+                }
+            }
+        }
+    };
+
+    // Create the chart
+    var myChart = new Chart(
+        document.getElementById('floor1chart'),
+        config
+    );
+}
 
 
+async function floorsPie() {
+    const data = {
+        labels: ['Level 1', "Level 2", "Level 3"],
+        datasets: [{
+            label: 'Floor1',
+            data: [5, 6, 8],
+            backgroundColor: [
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(235, 121, 20, 0.8)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)'
+            ],
+            hoverOffset: 4
+        }]
+    };
 
+    // Configuration for the pie chart
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            responsive: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Parking Availability'
+                }
+            }
+        },
+    };
+    // Create the pie chart
+    var myPieChart = new Chart(
+        document.getElementById('floorsPie'),
+        config
+    );
 
-
-
+}
 
 
 totalAvailable()
 homeBarChart()
 homePie()
+floor1()
+floorsPie()

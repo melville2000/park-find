@@ -152,6 +152,21 @@ routes.get("/dashboard", authMiddleware, async (req, res) => {
   }
 });
 
+/*  GET
+    DASHBOARD - charts */
+routes.get("/charts", authMiddleware, async (req, res) => {
+  try {
+    const curUser = await users.findById(req.userId);
+    const locals = {
+      title: "Admin Dashboard",
+      desc: "",
+    };
+    res.render("admin/charts", { layout: adminLayout, curUser, locals });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 //get
 //logout
 

@@ -17,7 +17,7 @@
 
     <div class="head">
         <div class="col-div-6">
-            <p class="nav"><i class="fa fa-dashboard icons"></i> Dashboard</p>
+            <p class="nav"><i class="fa fa-line-chart icons"></i> Charts</p>
 
         </div>
 
@@ -59,10 +59,9 @@
 
     <div class="clearfix"></div>
     <br />
-
     <div class="col-div-4-1">
         <div class="box">
-            <p class="head-1">Available Slots</p>
+            <p class="head-1">Floor 1</p>
             <p class="number" id="totalAvail">-</p>
             <p class="percent" id="availStat"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> 5.674% <span>Since
                     Last
@@ -72,7 +71,7 @@
     </div>
     <div class="col-div-4-1">
         <div class="box">
-            <p class="head-1">Used Slots</p>
+            <p class="head-1">Floor 2</p>
             <p class="number" id="totalUsed">-</p>
             <p class="percent" style="color:red!important" id="usedStat"><i class="fa fa-long-arrow-down"
                     aria-hidden="true"></i>
@@ -82,7 +81,7 @@
     </div>
     <div class="col-div-4-1">
         <div class="box">
-            <p class="head-1">Total Slots</p>
+            <p class="head-1">Floor 3</p>
             <p class="number" id="totalSlots">-</p>
             <p class="percent"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> 5.674% <span>Since Last
                     Months</span></p>
@@ -90,13 +89,28 @@
         </div>
     </div>
 
+
     <div class="clearfix"></div>
     <br />
 
 
     <div class="charts">
-        <canvas id="homeOverview"></canvas>
+        <canvas id="homeOverview">
+        </canvas>
         <canvas id="homePie"></canvas>
+    </div>
+
+    <h2 class="chartFloors">Levels</h2>
+    <hr>
+    <br>
+    <div class="floorWise">
+        <br>
+
+
+        <canvas id="floorsPie"></canvas>
+        <canvas id="floor1chart"></canvas>
+        <br>
+
     </div>
 
 </div>

@@ -553,4 +553,38 @@ tr:nth-child(even) {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 5px 10px #ddd;
+
+}
+
+.floorWise {
+  display: inline-flex;
+  width: 100%;
+}
+
+.chartFloors {
+  font-size: 30px;
+  color: #6c7293;
+  margin: 11px 0px;
+  font-weight: 600;
+}
+
+#floor1chart {
+  width: 65%;
+  height: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px #ddd;
+  margin-left: 20px;
+}
+
+#floorsPie {
+  margin-left: 0px;
+  width: auto;
+  height: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px #ddd;
+
 }
