@@ -196,6 +196,21 @@ routes.get("/locations", authMiddleware, async (req, res) => {
   }
 });
 
+/*  GET
+    DASHBOARD - bookings */
+routes.get("/bookings", authMiddleware, async (req, res) => {
+  try {
+    const curUser = await users.findById(req.userId);
+    const locals = {
+      title: "Admin Dashboard",
+      desc: "",
+    };
+    res.render("admin/bookings", { layout: adminLayout, curUser, locals });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 //get
 //logout

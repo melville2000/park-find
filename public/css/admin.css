@@ -599,3 +599,38 @@ tr:nth-child(even) {
   box-shadow: 2px 5px 10px #ddd;
 
 }
+
+
+/* Bookings */
+.container-table {
+  width: 90%;
+  max-width: auto;
+  margin: auto;
+  overflow-x: auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.container-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.container-table thead {
+  background-color: #333;
+  color: #fff;
+}
+
+.container-table th,
+table td {
+  padding: 12px 15px;
+}
+
+.container-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

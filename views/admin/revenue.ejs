@@ -1,9 +1,9 @@
 <div id="mySidenav" class="sidenav">
     <p class="logo"><i class="fa fa-car" aria-hidden="true"></i> ParkFind <span class="menu">☰</span></p>
     <p class="logo1"> <span class="menu1">☰</span></p>
-    <a href="dashboard" class="icon-a activePage"><i class="fas fa-chart-line"></i> Dashboard</a>
+    <a href="dashboard" class="icon-a"><i class="fas fa-chart-line"></i> Dashboard</a>
     <!-- <a href="charts" class="icon-a"><i class="fa fa-pie-chart icons"></i> Charts</a> -->
-    <a href="revenue" class="icon-a"><i class="fas fa-money-check-alt"></i> Revenue</a>
+    <a href="revenue" class="icon-a  activePage"><i class="fas fa-money-check-alt"></i> Revenue</a>
     <a href="locations" class="icon-a"><i class="fas fa-map-marker-alt"></i> Locations</a>
     <a href="bookings" class="icon-a"><i class="fas fa-calendar-check"></i> Bookings</a>
     <!-- <a href="#" class="icon-a"><i class="fa fa-user icons"></i> Accounts</a>
@@ -17,7 +17,7 @@
 
     <div class="head">
         <div class="col-div-6">
-            <p class="nav"><i class="fas fa-chart-line"></i> Dashboard</p>
+            <p class="nav"><i class="fas fa-money-check-alt"></i> Revenue</p>
 
         </div>
 
@@ -63,14 +63,14 @@
     <div class="content-page">
         <div class="col-div-4-1">
             <div class="box">
-                <p class="head-1">Available Slots</p>
-                <p class="number" id="totalAvail">-</p>
+                <p class="head-1">Total Revenue</p>
+                <p class="number" id="totalRevenue">-</p>
                 <i class="fas fa-car-side box-icon"></i>
             </div>
         </div>
         <div class="col-div-4-1">
             <div class="box">
-                <p class="head-1">Used Slots</p>
+                <p class="head-1">Average </p>
                 <p class="number" id="totalUsed">-</p>
                 <i class="fas fa-parking box-icon"></i>
             </div>
@@ -99,12 +99,9 @@
     </div>
     <div class="clearfix"></div>
     <br />
-    <hr>
     <br>
     <div class="floorWise">
         <br />
-
-
         <canvas id="floorsPie"></canvas>
         <canvas id="floor1chart"></canvas>
         <br />
