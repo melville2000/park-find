@@ -6,3 +6,7 @@ dashboard
 iot system
 
 car comes in 
+
+----------------------
+Dashboard side
+    

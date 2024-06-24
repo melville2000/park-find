@@ -1,12 +1,12 @@
 <div id="mySidenav" class="sidenav">
-    <p class="logo">ParkFind <span class="menu">☰</span></p>
+    <p class="logo"><i class="fa fa-car" aria-hidden="true"></i> ParkFind <span class="menu">☰</span></p>
     <p class="logo1"> <span class="menu1">☰</span></p>
-    <a href="dashboard" class="icon-a"><i class="fa fa-dashboard icons"></i> Dashboard</a>
-    <a href="charts" class="icon-a"><i class="fa fa-pie-chart icons"></i> Charts</a>
-    <a href="revenue" class="icon-a"><i class="fa fa-money icons"></i> Revenue</a>
-    <a href="location" class="icon-a"><i class="fa fa-map-marker icons"></i> Locations</a>
-    <!-- <a href="#" class="icon-a"><i class="fa fa-tasks icons"></i> Inventory</a>
-    <a href="#" class="icon-a"><i class="fa fa-user icons"></i> Accounts</a>
+    <a href="dashboard" class="icon-a activePage"><i class="fas fa-chart-line"></i> Dashboard</a>
+    <!-- <a href="charts" class="icon-a"><i class="fa fa-pie-chart icons"></i> Charts</a> -->
+    <a href="revenue" class="icon-a"><i class="fas fa-money-check-alt"></i> Revenue</a>
+    <a href="locations" class="icon-a"><i class="fas fa-map-marker-alt"></i> Locations</a>
+    <a href="#" class="icon-a"><i class="fas fa-calendar-check"></i> Bookings</a>
+    <!-- <a href="#" class="icon-a"><i class="fa fa-user icons"></i> Accounts</a>
     <a href="#" class="icon-a"><i class="fa fa-list-alt icons"></i> Tasks</a>
     <a href="#" class="icon-a"><i class="fa fa-bell icons"></i> Notification</a>
     <a href="#" class="icon-a"><i class="fa fa-circle icons"></i> Icons</a> -->
@@ -17,12 +17,12 @@
 
     <div class="head">
         <div class="col-div-6">
-            <p class="nav"><i class="fa fa-dashboard icons"></i> Dashboard</p>
+            <p class="nav"><i class="fas fa-chart-line"></i> Dashboard</p>
 
         </div>
 
         <div class="col-div-6">
-            <!-- <i class="fa fa-search search-icon"></i>
+            <i class="fa fa-search search-icon"></i>
 
 
             <i class="fa fa-bell noti-icon"></i>
@@ -38,7 +38,7 @@
                 <p>Your Order is Placed
                     <span>Lorem Ipsum is simply dummy </span>
                 </p>
-            </div> -->
+            </div>
             <div class="profile">
 
                 <img src="images/dp.jpg" class="pro-img" />
@@ -60,33 +60,27 @@
     <div class="clearfix"></div>
     <br />
 
-    <div class="col-div-4-1">
-        <div class="box">
-            <p class="head-1">Available Slots</p>
-            <p class="number" id="totalAvail">-</p>
-            <p class="percent" id="availStat"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> 5.674% <span>Since
-                    Last
-                    Months</span></p>
-            <i class="fa fa-line-chart box-icon"></i>
+    <div class="content-page">
+        <div class="col-div-4-1">
+            <div class="box">
+                <p class="head-1">Available Slots</p>
+                <p class="number" id="totalAvail">-</p>
+                <i class="fas fa-car-side box-icon"></i>
+            </div>
         </div>
-    </div>
-    <div class="col-div-4-1">
-        <div class="box">
-            <p class="head-1">Used Slots</p>
-            <p class="number" id="totalUsed">-</p>
-            <p class="percent" style="color:red!important" id="usedStat"><i class="fa fa-long-arrow-down"
-                    aria-hidden="true"></i>
-                5.64% <span>Since Last Months</span></p>
-            <i class="fa fa-circle-o-notch box-icon"></i>
+        <div class="col-div-4-1">
+            <div class="box">
+                <p class="head-1">Used Slots</p>
+                <p class="number" id="totalUsed">-</p>
+                <i class="fas fa-parking box-icon"></i>
+            </div>
         </div>
-    </div>
-    <div class="col-div-4-1">
-        <div class="box">
-            <p class="head-1">Total Slots</p>
-            <p class="number" id="totalSlots">-</p>
-            <p class="percent"><i class="fa fa-long-arrow-up" aria-hidden="true"></i> 5.674% <span>Since Last
-                    Months</span></p>
-            <i class="fa fa-shopping-bag box-icon"></i>
+        <div class="col-div-4-1">
+            <div class="box">
+                <p class="head-1">Bookings</p>
+                <p class="number" id="totalSlots">-</p>
+                <i class="fa fa-hand-holding-usd box-icon"></i>
+            </div>
         </div>
     </div>
 
@@ -97,6 +91,24 @@
     <div class="charts">
         <canvas id="homeOverview"></canvas>
         <canvas id="homePie"></canvas>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="col-div-6">
+        <p class="nav"><i class="fa fa-building" aria-hidden="true"></i> Floors</p>
+    </div>
+    <div class="clearfix"></div>
+    <br />
+    <hr>
+    <br>
+    <div class="floorWise">
+        <br />
+
+
+        <canvas id="floorsPie"></canvas>
+        <canvas id="floor1chart"></canvas>
+        <br />
+
     </div>
 
 </div>

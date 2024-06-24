@@ -153,7 +153,7 @@ routes.get("/dashboard", authMiddleware, async (req, res) => {
 });
 
 /*  GET
-    DASHBOARD - charts */
+    DASHBOARD - revenue */
 routes.get("/charts", authMiddleware, async (req, res) => {
   try {
     const curUser = await users.findById(req.userId);
@@ -166,6 +166,36 @@ routes.get("/charts", authMiddleware, async (req, res) => {
     console.log(error);
   }
 });
+
+/*  GET
+    DASHBOARD - revenue */
+routes.get("/revenue", authMiddleware, async (req, res) => {
+  try {
+    const curUser = await users.findById(req.userId);
+    const locals = {
+      title: "Admin Dashboard",
+      desc: "",
+    };
+    res.render("admin/revenue", { layout: adminLayout, curUser, locals });
+  } catch (error) {
+    console.log(error);
+  }
+});
+/*  GET
+    DASHBOARD - location */
+routes.get("/locations", authMiddleware, async (req, res) => {
+  try {
+    const curUser = await users.findById(req.userId);
+    const locals = {
+      title: "Admin Dashboard",
+      desc: "",
+    };
+    res.render("admin/locations", { layout: adminLayout, curUser, locals });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 //get
 //logout

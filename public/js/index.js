@@ -192,14 +192,29 @@ async function homePie() {
 }
 // *Floor1
 async function floor1() {
+    const returnedValue = await countZerosAndOnes()
     const data = {
         labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
         datasets: [{
             label: 'Floor1',
-            backgroundColor: 'rgb(255, 221, 149,0.62)',
+            backgroundColor: 'rgb(255, 221, 149,0.72)',
             borderColor: 'rgb(255, 152, 67)',
             fill: true,
-            data: [3, 2, 2, 3, 5, 2, 1, 1, 1, 1, 4, 3, 4, 4, 4, 4, 7, 7, 5, 6, 5, 4, 5, 3, 2, 4, 5, 5, 4, 4],
+            data: returnedValue.zeros,
+            tension: 0.4,
+        }, {
+            label: 'Floor2',
+            backgroundColor: 'rgb(75, 112, 245,0.52)',
+            borderColor: 'rgb(75, 112, 245)',
+            fill: true,
+            data: [4, 2, 3, 4, 4, 6, 5, 4, 2, 1, 2, 3, 5, 6, 5, 3, 3, 5, 4, 3, 2, 2, 3, 4, 3, 2, 2, 1, 1, 5], /* Test Data */
+            tension: 0.4,
+        }, {
+            label: 'Floor3',
+            backgroundColor: 'rgb(33, 156, 144,0.72)',
+            borderColor: 'rgb(33, 156, 144)',
+            fill: true,
+            data: [2, 7, 3, 1, 5, 4, 6, 2, 3, 1, 7, 5, 2, 5, 1, 3, 2, 6, 4, 1, 3, 5, 2, 7, 6, 2, 5, 6, 7, 6], /* Test Data */
             tension: 0.4,
         }]
     };
@@ -222,7 +237,7 @@ async function floor1() {
                 },
                 title: {
                     display: true,
-                    text: 'Level 1 Availibility'
+                    text: 'Availibility'
                 }
             }
         }
@@ -237,15 +252,16 @@ async function floor1() {
 
 
 async function floorsPie() {
+    const returnedValue = await countZerosAndOnes()
     const data = {
         labels: ['Level 1', "Level 2", "Level 3"],
         datasets: [{
             label: 'Floor1',
-            data: [5, 6, 8],
+            data: [8, 5, 6], /* Test Data */
             backgroundColor: [
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(235, 121, 20, 0.8)',
-                'rgba(153, 102, 255, 0.5)',
+                'rgb(255, 152, 67)',
+                'rgb(75, 112, 245)',
+                'rgb(33, 156, 144)',
                 'rgba(75, 192, 192, 0.5)',
                 'rgba(153, 102, 255, 0.5)',
                 'rgba(255, 159, 64, 0.5)'
