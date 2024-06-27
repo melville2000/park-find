@@ -54,6 +54,21 @@ routes.get("/about", (req, res) => {
   }
 });
 
+/*  GET
+    Contact  */
+routes.get("/contact", (req, res) => {
+  try {
+    const locals = {
+      title: "Contact Us",
+      desc: "A secure method of storing your passwords",
+    };
+    res.render("contact", { locals });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+
 /*  GET 
     login PAGE */
 routes.get("/login", (req, res) => {
